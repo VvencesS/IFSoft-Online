@@ -11,7 +11,16 @@ namespace IFSoft.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string s = Request["f"];
+            switch (s) 
+            {
+                case "news":
+                    plLoad.Controls.Add(LoadControl("News/NewsControl.ascx"));
+                    break;
+                case "product":
+                    plLoad.Controls.Add(LoadControl("Product/ProductControl.ascx"));
+                    break;
+            }
         }
     }
 }

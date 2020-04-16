@@ -7,6 +7,6 @@
             <uc1:Menu ID="Menu1" runat="server" />
         </td>
         <td style="width:10px">&nbsp;</td>
-        <td>Content</td>
+        <td><asp:PlaceHolder ID="plLoad" runat="server"></asp:PlaceHolder></td>
     </tr>
 </table>

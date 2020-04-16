@@ -7,29 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IFSoft.admin
+namespace IFSoft.admin.News
 {
 
 
-    public partial class AdminControl
+    public partial class NewsCategories
     {
 
         /// <summary>
-        /// Menu1 control.
+        /// rbtNewsCategories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::IFSoft.admin.Menu Menu1;
-
-        /// <summary>
-        /// plLoad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder plLoad;
+        protected global::System.Web.UI.WebControls.Repeater rbtNewsCategories;
     }
 }

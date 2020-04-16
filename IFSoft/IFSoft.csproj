@@ -53,6 +53,10 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="SQLDB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SQLDB\SQLDB\bin\Debug\SQLDB.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -111,7 +115,9 @@
     <Content Include="admin\Contact\ContactControl.ascx" />
     <Content Include="admin\Login.ascx" />
     <Content Include="admin\Menu.ascx" />
+    <Content Include="admin\News\NewsCategories.ascx" />
     <Content Include="admin\News\NewsControl.ascx" />
+    <Content Include="admin\News\NewsDetail.ascx" />
     <Content Include="admin\Product\ProductControl.ascx" />
     <Content Include="admin\User\UserControl.ascx" />
     <Content Include="Content\admin.css" />
@@ -293,12 +299,26 @@
     <Compile Include="admin\Menu.ascx.designer.cs">
       <DependentUpon>Menu.ascx</DependentUpon>
     </Compile>
+    <Compile Include="admin\News\NewsCategories.ascx.cs">
+      <DependentUpon>NewsCategories.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\News\NewsCategories.ascx.designer.cs">
+      <DependentUpon>NewsCategories.ascx</DependentUpon>
+    </Compile>
     <Compile Include="admin\News\NewsControl.ascx.cs">
       <DependentUpon>NewsControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\News\NewsControl.ascx.designer.cs">
       <DependentUpon>NewsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\News\NewsDetail.ascx.cs">
+      <DependentUpon>NewsDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\News\NewsDetail.ascx.designer.cs">
+      <DependentUpon>NewsDetail.ascx</DependentUpon>
     </Compile>
     <Compile Include="admin\Product\ProductControl.ascx.cs">
       <DependentUpon>ProductControl.ascx</DependentUpon>
@@ -364,6 +384,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -382,6 +403,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IFSOFT.Dal\IFSOFT.Dal.csproj">
+      <Project>{b2becfaf-cf7a-41a7-836e-0ab836775459}</Project>
+      <Name>IFSOFT.Dal</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

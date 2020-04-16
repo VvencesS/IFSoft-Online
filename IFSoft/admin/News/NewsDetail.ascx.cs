@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace IFSoft.admin.News
 {
-    public partial class NewsControl : System.Web.UI.UserControl
+    public partial class NewsDetail : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Controls.Add(LoadControl("NewsCategories.ascx"));
+
         }
     }
 }

@@ -110,9 +110,11 @@
     <Content Include="admin\adminControl.ascx" />
     <Content Include="admin\Contact\ContactControl.ascx" />
     <Content Include="admin\Login.ascx" />
+    <Content Include="admin\Menu.ascx" />
     <Content Include="admin\News\NewsControl.ascx" />
     <Content Include="admin\Product\ProductControl.ascx" />
     <Content Include="admin\User\UserControl.ascx" />
+    <Content Include="Content\admin.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -124,6 +126,7 @@
     <Content Include="display\displayControl.ascx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Adminitrator.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -283,6 +286,13 @@
     <Compile Include="admin\Login.ascx.designer.cs">
       <DependentUpon>Login.ascx</DependentUpon>
     </Compile>
+    <Compile Include="admin\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Menu.ascx.designer.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+    </Compile>
     <Compile Include="admin\News\NewsControl.ascx.cs">
       <DependentUpon>NewsControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -322,6 +332,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Adminitrator.aspx.cs">
+      <DependentUpon>Adminitrator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adminitrator.aspx.designer.cs">
+      <DependentUpon>Adminitrator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

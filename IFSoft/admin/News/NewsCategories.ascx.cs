@@ -25,5 +25,20 @@ namespace IFSoft.admin.News
             rbtNewsCategories.DataSource = _news.GetList();
             rbtNewsCategories.DataBind();
         }
+
+        protected void lnkAddNew_Click1(object sender, EventArgs e)
+        {
+            mul.ActiveViewIndex = 1;
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtCategoryName.Text.Trim()))
+            {
+                bool active = chkActive.Checked ? true : false;
+                _news.Insert(txtCategoryName.Text.Trim(), int.Parse(txtOrder.Text.Trim()), active);
+                Response.Redirect(Request.Url.ToString());
+            }
+        }
     }
 }

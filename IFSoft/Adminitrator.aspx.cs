@@ -11,7 +11,7 @@ namespace IFSoft
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Controls.Add(LoadControl("/admin/adminControl.ascx"));
+            plLoad.Controls.Add(LoadControl("/admin/adminControl.ascx"));
         }
     }
 }

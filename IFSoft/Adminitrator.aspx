@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Adminitrator.aspx.cs" Inherits="IFSoft.Manager" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Adminitrator.aspx.cs" Inherits="IFSoft.Manager" ValidateRequest="false"%>
 
 <!DOCTYPE html>
 

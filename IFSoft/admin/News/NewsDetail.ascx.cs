@@ -13,5 +13,10 @@ namespace IFSoft.admin.News
         {
 
         }
+
+        protected void BtnTest_Click(object sender, EventArgs e)
+        {
+            Response.Write(txtContent.Text);
+        }
     }
 }

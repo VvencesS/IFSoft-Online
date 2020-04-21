@@ -11,7 +11,16 @@ namespace IFSoft.admin.News
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Controls.Add(LoadControl("NewsCategories.ascx"));
+            string fs = Request["fs"];
+            switch (fs)
+            {
+                case "des":
+                    Controls.Add(LoadControl("NewsDetail.ascx"));
+                    break;
+                default:
+                    Controls.Add(LoadControl("NewsCategories.ascx"));
+                    break;
+            }
         }
     }
 }

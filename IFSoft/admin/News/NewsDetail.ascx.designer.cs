@@ -13,5 +13,23 @@ namespace IFSoft.admin.News
 
     public partial class NewsDetail
     {
+
+        /// <summary>
+        /// txtContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::FreeTextBoxControls.FreeTextBox txtContent;
+
+        /// <summary>
+        /// BtnTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnTest;
     }
 }

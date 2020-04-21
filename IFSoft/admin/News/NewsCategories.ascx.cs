@@ -32,7 +32,10 @@ namespace IFSoft.admin.News
             hdInsert.Value = "insert";
             mul.ActiveViewIndex = 1;
         }
-
+        protected void msgDelete(object sender, System.EventArgs e)
+        {
+            ((LinkButton)sender).Attributes["onclick"] = "return confirm('Delete selected Category?')";
+        }
         protected void btnSave_Click(object sender, EventArgs e)
         {
             if (hdInsert.Value == "insert") 
@@ -65,6 +68,7 @@ namespace IFSoft.admin.News
 
                     if (dt.Rows.Count > 0)
                     {
+                        //Thao tác update
                         txtCategoryName.Text = dt.Rows[0]["vName"].ToString();
                         txtOrder.Text = dt.Rows[0]["vOrder"].ToString();
                         chkActive.Checked = ((bool)dt.Rows[0]["Active"]) ? true : false;
@@ -73,6 +77,16 @@ namespace IFSoft.admin.News
                         hdInsert.Value = "update";
 
                         mul.ActiveViewIndex = 1;
+                    }
+                    break;
+                case "delete":
+                    dt = _news.GetListByCateID(int.Parse(e.CommandArgument.ToString()));
+
+                    if(dt.Rows.Count > 0)
+                    {
+                        //Thao tác xóa
+                        _news.Delete(int.Parse(e.CommandArgument.ToString()));
+                        Response.Redirect(Request.Url.ToString());
                     }
                     break;
             }

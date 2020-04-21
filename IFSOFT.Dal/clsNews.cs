@@ -47,5 +47,13 @@ namespace IFSOFT.Dal
 
             SQLDB.SQLDB.ExecuteNoneQuery(command);
         }
+        public void Delete(int CateID)
+        {
+            SqlCommand command = new SqlCommand("Delete From NewsCategories Where CateID=@CateID");
+            command.CommandType = CommandType.Text;
+            command.Parameters.AddWithValue("@CateID", CateID);
+
+            SQLDB.SQLDB.ExecuteNoneQuery(command);
+        }
     }
 }

@@ -24,6 +24,12 @@
                         </td>
                         <td><%#:Eval("vOrder") %></td>
                         <td><%#:Eval("Active") %></td>
+                        <td>
+                            <asp:LinkButton ID="lnkDelete" runat="server" CommandName="delete" CommandArgument=<%#:Eval("CateID") %> OnLoad="msgDelete">
+                                Xóa
+                            </asp:LinkButton> 
+
+                        </td>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>

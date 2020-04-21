@@ -60,6 +60,24 @@ namespace IFSoft.admin.News
         protected global::System.Web.UI.WebControls.View v2;
 
         /// <summary>
+        /// hdCategoryID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdCategoryID;
+
+        /// <summary>
+        /// hdInsert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdInsert;
+
+        /// <summary>
         /// txtCategoryName control.
         /// </summary>
         /// <remarks>

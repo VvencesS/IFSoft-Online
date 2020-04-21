@@ -4,7 +4,7 @@
 <asp:MultiView ID="mul" runat="server" ActiveViewIndex="0">
     <asp:View ID="v1" runat="server">
         <div>
-            <asp:Repeater ID="rbtNewsCategories" runat="server">
+            <asp:Repeater ID="rbtNewsCategories" runat="server" OnItemCommand="rbtNewsCategories_ItemCommand">
                 <HeaderTemplate>
                     <table style="width:100%">
                         <tr>
@@ -16,7 +16,12 @@
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
-                        <td><%#:Eval("vName") %></td>
+                        <td>
+                            <asp:LinkButton ID="lnkUpdate" runat="server" CommandName="update" CommandArgument=<%#:Eval("CateID") %>>
+                                <%#:Eval("vName") %>
+                            </asp:LinkButton> 
+
+                        </td>
                         <td><%#:Eval("vOrder") %></td>
                         <td><%#:Eval("Active") %></td>
                     </tr>
@@ -32,6 +37,8 @@
             
     </asp:View>
     <asp:View ID="v2" runat="server">
+        <asp:HiddenField ID="hdCategoryID" runat="server" />
+        <asp:HiddenField ID="hdInsert" runat="server" />
         <table>
             <tr>
                 <td>Category Name</td>

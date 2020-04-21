@@ -15,6 +15,15 @@ namespace IFSOFT.Dal
         {
             SqlCommand command = new SqlCommand("Select * from NewsCategories");
             command.CommandType = CommandType.Text;
+
+            return SQLDB.SQLDB.GetData(command);
+        }
+        public DataTable GetListByCateID(int cateID)
+        {
+            SqlCommand command = new SqlCommand("Select * from NewsCategories where CateID=@cateID");
+            command.CommandType = CommandType.Text;
+            command.Parameters.AddWithValue("@cateID", cateID);
+
             return SQLDB.SQLDB.GetData(command);
         }
         public void Insert(string CategoryName, int Order, bool Active)
@@ -24,6 +33,17 @@ namespace IFSOFT.Dal
             command.Parameters.AddWithValue("@CategoryName", CategoryName);
             command.Parameters.AddWithValue("@Order", Order);
             command.Parameters.AddWithValue("@Active", Active);
+
+            SQLDB.SQLDB.ExecuteNoneQuery(command);
+        }
+        public void Update(int CateID, string CategoryName, int Order, bool Active)
+        {
+            SqlCommand command = new SqlCommand("Update NewsCategories set vName=@CategoryName, [vOrder]=@Order, Active=@Active Where CateID=@CateID");
+            command.CommandType = CommandType.Text;
+            command.Parameters.AddWithValue("@CategoryName", CategoryName);
+            command.Parameters.AddWithValue("@Order", Order);
+            command.Parameters.AddWithValue("@Active", Active);
+            command.Parameters.AddWithValue("@CateID", CateID);
 
             SQLDB.SQLDB.ExecuteNoneQuery(command);
         }

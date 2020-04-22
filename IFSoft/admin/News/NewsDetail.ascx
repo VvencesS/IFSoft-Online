@@ -1,6 +1,32 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NewsDetail.ascx.cs" Inherits="IFSoft.admin.News.NewsDetail" %>
 <%@ Register Assembly="FreeTextBox" Namespace="FreeTextBoxControls" TagPrefix="FTB" %>
 <asp:MultiView ID="mul" runat="server" ActiveViewIndex="0">
+    <asp:View ID="v0" runat="server">
+        <asp:Repeater ID="rptNewsDetails" runat="server">
+            <HeaderTemplate>
+                <table style="width:100%;">
+                    <tr>
+                        <td style="width:100px;">Image</td>
+                        <td style="width:400px;">Title</td>
+                        <td style="width:100px;">Author</td>
+                        <td style="width:100px;">Active</td>
+                    </tr>
+            </HeaderTemplate>
+            <ItemTemplate>
+                <tr>
+                    <td><img src='/Images/<%#:Eval("vImage") %>' width="100px"/></td>
+                    <td><%#:Eval("vTitle") %></td>
+                    <td><%#:Eval("vAuthor") %></td>
+                    <td><%#:Eval("Active") %></td>
+                    <td></td>
+                </tr>
+            </ItemTemplate>
+            <FooterTemplate>
+                </table>
+            </FooterTemplate>
+        </asp:Repeater>
+        <div><asp:LinkButton ID="lnkUpdate" runat="server" OnClick="lnkUpdate_Click">Add New</asp:LinkButton></div>
+    </asp:View>
     <asp:View ID="v1" runat="server">
         <table style="width:100%;">
             <tr>

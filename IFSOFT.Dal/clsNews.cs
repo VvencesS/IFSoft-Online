@@ -73,5 +73,12 @@ namespace IFSOFT.Dal
 
             SQLDB.SQLDB.ExecuteNoneQuery(command);
         }
+
+        public DataTable GetListNewsDetail()
+        {
+            SqlCommand command = new SqlCommand("Select * from NewsDetail");
+            command.CommandType = CommandType.Text;
+            return SQLDB.SQLDB.GetData(command);
+        }
     }
 }

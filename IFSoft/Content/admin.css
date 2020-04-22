@@ -7,8 +7,8 @@ div{
 }
 a{
     text-decoration: none;
-    color: black;
+    color: red !important;
 }
 a:hover{
-    color: red;
+    color: blue;
 }

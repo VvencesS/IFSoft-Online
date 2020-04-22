@@ -11,6 +11,7 @@ namespace IFSOFT.Dal
 {
     public class clsNews
     {
+        //NewsCategories
         public DataTable GetList()
         {
             SqlCommand command = new SqlCommand("Select * from NewsCategories");
@@ -52,6 +53,23 @@ namespace IFSOFT.Dal
             SqlCommand command = new SqlCommand("Delete From NewsCategories Where CateID=@CateID");
             command.CommandType = CommandType.Text;
             command.Parameters.AddWithValue("@CateID", CateID);
+
+            SQLDB.SQLDB.ExecuteNoneQuery(command);
+        }
+
+        //NewsDetail
+        public void InsertDetail(int cateID, string title, string desc, string content, string image, DateTime createDate, string author, bool active)
+        {
+            SqlCommand command = new SqlCommand("Insert into NewsDetail values(@cateID, @title, @desc, @content, @image, @createDate, @author, @active)");
+            command.CommandType = CommandType.Text;
+            command.Parameters.AddWithValue("@cateID", cateID);
+            command.Parameters.AddWithValue("@title", title);
+            command.Parameters.AddWithValue("@desc", desc);
+            command.Parameters.AddWithValue("@content", content);
+            command.Parameters.AddWithValue("@image", image);
+            command.Parameters.AddWithValue("@createDate", createDate);
+            command.Parameters.AddWithValue("@author", author);
+            command.Parameters.AddWithValue("@active", active);
 
             SQLDB.SQLDB.ExecuteNoneQuery(command);
         }

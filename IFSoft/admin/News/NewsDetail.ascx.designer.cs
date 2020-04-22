@@ -42,6 +42,33 @@ namespace IFSoft.admin.News
         protected global::System.Web.UI.WebControls.Repeater rptNewsDetails;
 
         /// <summary>
+        /// hdInsert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdInsert;
+
+        /// <summary>
+        /// hdDelID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdDelID;
+
+        /// <summary>
+        /// hdImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdImage;
+
+        /// <summary>
         /// lnkUpdate control.
         /// </summary>
         /// <remarks>

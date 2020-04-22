@@ -80,5 +80,28 @@ namespace IFSOFT.Dal
             command.CommandType = CommandType.Text;
             return SQLDB.SQLDB.GetData(command);
         }
+        public DataTable GetListByDelID(int delID)
+        {
+            SqlCommand command = new SqlCommand("Select * from NewsDetail where DelID=@delID");
+            command.CommandType = CommandType.Text;
+            command.Parameters.AddWithValue("@delID", delID);
+
+            return SQLDB.SQLDB.GetData(command);
+        }
+        public void UpdateDetail(int delID, int cateID, string title, string desc, string content, string image, string author, bool active)
+        {
+            SqlCommand command = new SqlCommand("Update NewsDetail set CateID=@cateID, vTitle@title, vDesc=@desc, vContent=@content, vImage=@image, vAuthor=@author, Active=@active Where DelID=@delID");
+            command.CommandType = CommandType.Text;
+            command.Parameters.AddWithValue("@cateID", cateID);
+            command.Parameters.AddWithValue("@title", title);
+            command.Parameters.AddWithValue("@desc", desc);
+            command.Parameters.AddWithValue("@content", content);
+            command.Parameters.AddWithValue("@image", image);
+            command.Parameters.AddWithValue("@author", author);
+            command.Parameters.AddWithValue("@active", active);
+            command.Parameters.AddWithValue("@delID", delID);
+
+            SQLDB.SQLDB.ExecuteNoneQuery(command);
+        }
     }
 }

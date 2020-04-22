@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -36,7 +37,8 @@ namespace IFSoft.admin.News
         {
             //Upload image
             string typefile = "";
-            string file = "";
+            string file = hdImage.Value; //Nếu file chưa có thì sẽ là rỗng
+            
             if (fUp.FileName.Length > 0)
             {
                 if (fUp.PostedFile.ContentLength < 5000000)
@@ -56,18 +58,69 @@ namespace IFSoft.admin.News
                 }
             }
 
-            //Thêm mới
+            //Kiểm tra image đã tồn tại
+            if (!file.Equals(hdImage.Value))
+            {
+                if (!hdImage.Value.Equals(""))
+                {
+                    if(System.IO.File.Exists(Server.MapPath("~/Images/" + hdImage.Value)) == true)
+                    {
+                        System.IO.File.Delete(Server.MapPath("~/Images/" + hdImage.Value));
+                    }
+                }
+            }
+
             if (!string.IsNullOrEmpty(txtTitle.Text.Trim()))
             {
-                bool active = chkActive.Checked ? true : false;
-                _news.InsertDetail(int.Parse(drpNewsCategoy.SelectedValue.ToString()), txtTitle.Text.Trim(), txtDesc.Text.Trim(), txtContent.Text.Trim(), file, DateTime.Now, txtAuthor.Text.Trim(), active);
+                if (hdInsert.Value == "insert")
+                {
+                    //Thêm mới
+                    bool active = chkActive.Checked ? true : false;
+                    _news.InsertDetail(int.Parse(drpNewsCategoy.SelectedValue.ToString()), txtTitle.Text.Trim(), txtDesc.Text.Trim(), txtContent.Text.Trim(), file, DateTime.Now, txtAuthor.Text.Trim(), active);
+                }
+                else
+                {
+                    //Cập nhật
+                    bool active = chkActive.Checked ? true : false;
+                    _news.UpdateDetail(int.Parse(hdDelID.Value.ToString()), int.Parse(drpNewsCategoy.SelectedValue.ToString()), txtTitle.Text.Trim(), txtDesc.Text.Trim(), txtContent.Text.Trim(), file, txtAuthor.Text.Trim(), active);
+                }
                 Response.Redirect(Request.Url.ToString());
             }
         }
 
         protected void lnkUpdate_Click(object sender, EventArgs e)
         {
+            hdInsert.Value = "insert";
             mul.ActiveViewIndex = 1;
+        }
+
+        protected void rptNewsDetails_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = _news.GetListByDelID(int.Parse(e.CommandArgument.ToString()));
+            switch (e.CommandName.ToString())
+            {
+                case "update":
+                    if (dt.Rows.Count > 0)
+                    {
+                        drpNewsCategoy.SelectedValue = dt.Rows[0]["CateID"].ToString();
+                        txtTitle.Text = dt.Rows[0]["vTitle"].ToString();
+                        txtDesc.Text = dt.Rows[0]["vDesc"].ToString();
+                        txtContent.Text = dt.Rows[0]["vContent"].ToString();
+                        hdImage.Value = dt.Rows[0]["vImage"].ToString();
+                        txtAuthor.Text = dt.Rows[0]["vAuthor"].ToString();
+                        chkActive.Checked = ((bool)dt.Rows[0]["Active"]) ? true : false;
+
+                        hdDelID.Value = e.CommandArgument.ToString();
+                        hdInsert.Value = "update";
+
+                        mul.ActiveViewIndex = 1;
+                    }
+                    break;
+                case "delete":
+
+                    break;
+            }
         }
     }
 }

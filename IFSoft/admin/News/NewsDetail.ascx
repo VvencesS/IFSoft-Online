@@ -2,7 +2,7 @@
 <%@ Register Assembly="FreeTextBox" Namespace="FreeTextBoxControls" TagPrefix="FTB" %>
 <asp:MultiView ID="mul" runat="server" ActiveViewIndex="0">
     <asp:View ID="v0" runat="server">
-        <asp:Repeater ID="rptNewsDetails" runat="server">
+        <asp:Repeater ID="rptNewsDetails" runat="server" OnItemCommand="rptNewsDetails_ItemCommand">
             <HeaderTemplate>
                 <table style="width:100%;">
                     <tr>
@@ -18,13 +18,20 @@
                     <td><%#:Eval("vTitle") %></td>
                     <td><%#:Eval("vAuthor") %></td>
                     <td><%#:Eval("Active") %></td>
-                    <td></td>
+                    <td>
+                        <asp:LinkButton ID="lnkUpdate" runat="server" CommandName="update" CommandArgument='<%#:Eval("DelID") %>'>Cập nhật</asp:LinkButton>
+                        &nbsp;|&nbsp;
+                        <asp:LinkButton ID="lnkDelete" runat="server" CommandName="delete" CommandArgument='<%#:Eval("DelID") %>'>Xóa</asp:LinkButton>
+                    </td>
                 </tr>
             </ItemTemplate>
             <FooterTemplate>
                 </table>
             </FooterTemplate>
         </asp:Repeater>
+        <asp:HiddenField ID="hdInsert" runat="server" />
+        <asp:HiddenField ID="hdDelID" runat="server" />
+        <asp:HiddenField ID="hdImage" runat="server" />
         <div><asp:LinkButton ID="lnkUpdate" runat="server" OnClick="lnkUpdate_Click">Add New</asp:LinkButton></div>
     </asp:View>
     <asp:View ID="v1" runat="server">

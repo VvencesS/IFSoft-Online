@@ -17,8 +17,9 @@ namespace IFSoft.admin.News
         {
             if (!IsPostBack)
             {
-                LoadNewsDetail();
+                LoadNewsDetailAll();
                 LoadDataDropDownList();
+                LoadDataDropDownList1();
             }
         }
         void LoadDataDropDownList()
@@ -28,9 +29,21 @@ namespace IFSoft.admin.News
             drpNewsCategoy.DataTextField = "vName";
             drpNewsCategoy.DataBind();
         }
+        void LoadDataDropDownList1()
+        {
+            drpNewsCategory1.DataSource = _news.GetList();
+            drpNewsCategory1.DataValueField = "CateID";
+            drpNewsCategory1.DataTextField = "vName";
+            drpNewsCategory1.DataBind();
+        }
+        void LoadNewsDetailAll()
+        {
+            rptNewsDetails.DataSource = _news.GetListNewsDetailAll();
+            rptNewsDetails.DataBind();
+        }
         void LoadNewsDetail()
         {
-            rptNewsDetails.DataSource = _news.GetListNewsDetail();
+            rptNewsDetails.DataSource = _news.GetListNewsDetail(int.Parse(drpNewsCategory1.SelectedValue.ToString()));
             rptNewsDetails.DataBind();
         }
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -135,6 +148,11 @@ namespace IFSoft.admin.News
                     }
                     break;
             }
+        }
+
+        protected void drpNewsCategory1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadNewsDetail();
         }
     }
 }

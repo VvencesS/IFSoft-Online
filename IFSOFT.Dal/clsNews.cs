@@ -73,11 +73,19 @@ namespace IFSOFT.Dal
 
             SQLDB.SQLDB.ExecuteNoneQuery(command);
         }
-
-        public DataTable GetListNewsDetail()
+        public DataTable GetListNewsDetailAll()
         {
             SqlCommand command = new SqlCommand("Select * from NewsDetail");
             command.CommandType = CommandType.Text;
+
+            return SQLDB.SQLDB.GetData(command);
+        }
+        public DataTable GetListNewsDetail(int cateID)
+        {
+            SqlCommand command = new SqlCommand("Select * from NewsDetail Where CateID=@cateID");
+            command.CommandType = CommandType.Text;
+            command.Parameters.AddWithValue("@cateID", cateID);
+
             return SQLDB.SQLDB.GetData(command);
         }
         public DataTable GetListByDelID(int delID)

@@ -2,6 +2,7 @@
 <%@ Register Assembly="FreeTextBox" Namespace="FreeTextBoxControls" TagPrefix="FTB" %>
 <asp:MultiView ID="mul" runat="server" ActiveViewIndex="0">
     <asp:View ID="v0" runat="server">
+        <asp:DropDownList ID="drpNewsCategory1" runat="server" OnSelectedIndexChanged="drpNewsCategory1_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
         <asp:Repeater ID="rptNewsDetails" runat="server" OnItemCommand="rptNewsDetails_ItemCommand">
             <HeaderTemplate>
                 <table style="width:100%;">

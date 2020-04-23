@@ -24,6 +24,15 @@ namespace IFSOFT.Dal
 
             SQLDB.SQLDB.ExecuteNoneQuery(command);
         }
+        public DataTable Login(string userName, string password)
+        {
+            SqlCommand command = new SqlCommand("Select * from AdminUsers where UserName=@userName and Password=@password");
+            command.CommandType = CommandType.Text;
+            command.Parameters.AddWithValue("@userName", userName);
+            command.Parameters.AddWithValue("@password", BuildPassword(password));
+
+            return SQLDB.SQLDB.GetData(command);
+        }
         protected string BuildPassword(string input)
         {
             MD5 md5Hasher = MD5.Create();

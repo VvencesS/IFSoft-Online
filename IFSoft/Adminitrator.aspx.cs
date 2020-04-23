@@ -11,7 +11,14 @@ namespace IFSoft
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            plLoad.Controls.Add(LoadControl("/admin/adminControl.ascx"));
+            if (Session["username"] != null)
+            {
+                plLoad.Controls.Add(LoadControl("/admin/adminControl.ascx"));
+            }
+            else
+            {
+                plLoad.Controls.Add(LoadControl("/admin/login.ascx"));
+            }
         }
     }
 }

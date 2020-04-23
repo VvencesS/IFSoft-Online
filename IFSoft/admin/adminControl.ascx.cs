@@ -11,6 +11,13 @@ namespace IFSoft.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Nếu chưa login
+            if (Session["username"] == null)
+            {
+                Response.Redirect("administrator.aspx");
+            }
+
+            //Đã login
             string s = Request["f"];
             switch (s) 
             {
@@ -24,6 +31,13 @@ namespace IFSoft.admin
                     plLoad.Controls.Add(LoadControl("User/UserControl.ascx"));
                     break;
             }
+        }
+
+        protected void lnkExit_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Session.Clear();
+            Response.Redirect("~/Adminitrator.aspx");
         }
     }
 }

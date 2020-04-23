@@ -127,6 +127,7 @@
     <Content Include="admin\News\NewsControl.ascx" />
     <Content Include="admin\News\NewsDetail.ascx" />
     <Content Include="admin\Product\ProductControl.ascx" />
+    <Content Include="admin\User\AdminUser.ascx" />
     <Content Include="admin\User\UserControl.ascx" />
     <Content Include="Content\admin.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -334,6 +335,13 @@
     </Compile>
     <Compile Include="admin\Product\ProductControl.ascx.designer.cs">
       <DependentUpon>ProductControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\User\AdminUser.ascx.cs">
+      <DependentUpon>AdminUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\User\AdminUser.ascx.designer.cs">
+      <DependentUpon>AdminUser.ascx</DependentUpon>
     </Compile>
     <Compile Include="admin\User\UserControl.ascx.cs">
       <DependentUpon>UserControl.ascx</DependentUpon>

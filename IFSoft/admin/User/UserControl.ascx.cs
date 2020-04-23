@@ -11,7 +11,7 @@ namespace IFSoft.admin.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Controls.Add(LoadControl("AdminUser.ascx"));
         }
     }
 }

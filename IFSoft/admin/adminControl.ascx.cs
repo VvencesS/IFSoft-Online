@@ -20,6 +20,9 @@ namespace IFSoft.admin
                 case "product":
                     plLoad.Controls.Add(LoadControl("Product/ProductControl.ascx"));
                     break;
+                case "user":
+                    plLoad.Controls.Add(LoadControl("User/UserControl.ascx"));
+                    break;
             }
         }
     }

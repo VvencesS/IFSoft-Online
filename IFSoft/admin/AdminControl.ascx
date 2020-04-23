@@ -3,10 +3,8 @@
 <div>Banner Admin</div>
 <table cellspasing="0" cellpadding="0" style="width:100%">
     <tr>
-        <td style="width:200px">
-            <uc1:Menu ID="Menu1" runat="server" />
-        </td>
+        <td style="width:200px"><uc1:Menu ID="Menu1" runat="server" /></td>
         <td style="width:10px">&nbsp;</td>
-        <td><asp:PlaceHolder ID="plLoad" runat="server"></asp:PlaceHolder></td>
+        <td style="vertical-align:top;"><asp:PlaceHolder ID="plLoad" runat="server"></asp:PlaceHolder></td>
     </tr>
 </table>

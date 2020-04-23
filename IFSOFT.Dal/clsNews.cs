@@ -90,7 +90,7 @@ namespace IFSOFT.Dal
         }
         public void UpdateDetail(int delID, int cateID, string title, string desc, string content, string image, string author, bool active)
         {
-            SqlCommand command = new SqlCommand("Update NewsDetail set CateID=@cateID, vTitle@title, vDesc=@desc, vContent=@content, vImage=@image, vAuthor=@author, Active=@active Where DelID=@delID");
+            SqlCommand command = new SqlCommand("Update NewsDetail set CateID=@cateID, vTitle=@title, vDesc=@desc, vContent=@content, vImage=@image, vAuthor=@author, Active=@active Where DelID=@delID");
             command.CommandType = CommandType.Text;
             command.Parameters.AddWithValue("@cateID", cateID);
             command.Parameters.AddWithValue("@title", title);
@@ -99,6 +99,14 @@ namespace IFSOFT.Dal
             command.Parameters.AddWithValue("@image", image);
             command.Parameters.AddWithValue("@author", author);
             command.Parameters.AddWithValue("@active", active);
+            command.Parameters.AddWithValue("@delID", delID);
+
+            SQLDB.SQLDB.ExecuteNoneQuery(command);
+        }
+        public void DeleteDetail(int delID)
+        {
+            SqlCommand command = new SqlCommand("Delete from NewsDetail Where DelID=@delID");
+            command.CommandType = CommandType.Text;
             command.Parameters.AddWithValue("@delID", delID);
 
             SQLDB.SQLDB.ExecuteNoneQuery(command);

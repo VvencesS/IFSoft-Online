@@ -93,7 +93,10 @@ namespace IFSoft.admin.News
             hdInsert.Value = "insert";
             mul.ActiveViewIndex = 1;
         }
-
+        protected void msgDelete(object sender, System.EventArgs e)
+        {
+            ((LinkButton)sender).Attributes["onclick"] = "return confirm('Delete selected Category?')";
+        }
         protected void rptNewsDetails_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             DataTable dt = new DataTable();
@@ -118,7 +121,18 @@ namespace IFSoft.admin.News
                     }
                     break;
                 case "delete":
+                    if (dt.Rows.Count > 0)
+                    {
+                        //Xóa hình ảnh project
+                        if (System.IO.File.Exists(Server.MapPath("~/Images/" + dt.Rows[0]["vImage"])) == true)
+                        {
+                            System.IO.File.Delete(Server.MapPath("~/Images/" + dt.Rows[0]["vImage"]));
+                        }
 
+                        //Xóa dữ liệu trong csdl
+                        _news.DeleteDetail(int.Parse(e.CommandArgument.ToString()));
+                        Response.Redirect(Request.Url.ToString());
+                    }
                     break;
             }
         }

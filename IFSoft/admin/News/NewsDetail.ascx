@@ -21,7 +21,7 @@
                     <td>
                         <asp:LinkButton ID="lnkUpdate" runat="server" CommandName="update" CommandArgument='<%#:Eval("DelID") %>'>Cập nhật</asp:LinkButton>
                         &nbsp;|&nbsp;
-                        <asp:LinkButton ID="lnkDelete" runat="server" CommandName="delete" CommandArgument='<%#:Eval("DelID") %>'>Xóa</asp:LinkButton>
+                        <asp:LinkButton ID="lnkDelete" runat="server" CommandName="delete" CommandArgument='<%#:Eval("DelID") %>' OnLoad="msgDelete">Xóa</asp:LinkButton>
                     </td>
                 </tr>
             </ItemTemplate>

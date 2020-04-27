@@ -119,5 +119,12 @@ namespace IFSOFT.Dal
 
             SQLDB.SQLDB.ExecuteNoneQuery(command);
         }
+        public DataTable GetNewsList() //Hiển thị danh sách tin tức
+        {
+            SqlCommand command = new SqlCommand("Select * from NewsDetail where Active='true' order by vCreateDate desc");
+            command.CommandType = CommandType.Text;
+            return SQLDB.SQLDB.GetData(command);
+
+        }
     }
 }

@@ -11,7 +11,18 @@ namespace IFSoft
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            switch (Request["f"])
+            {
+                case "news":
+                    Controls.Add(LoadControl("display/news/dNewsList.ascx"));
+                    break;
+                case "contact":
 
+                    break;
+                default:
+
+                    break;
+            }
         }
     }
 }

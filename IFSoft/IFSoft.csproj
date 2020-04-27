@@ -150,6 +150,7 @@
     <Content Include="display\Utilities\dBanner.ascx" />
     <Content Include="display\Utilities\dContact.ascx" />
     <Content Include="display\Utilities\dFooter.ascx" />
+    <Content Include="display\Utilities\dIndex.ascx" />
     <Content Include="display\Utilities\dMenu.ascx" />
     <Content Include="display\Utilities\dSupport.ascx" />
     <Content Include="display\Utilities\dUtilitiesControl.ascx" />
@@ -519,6 +520,13 @@
     </Compile>
     <Compile Include="display\Utilities\dFooter.ascx.designer.cs">
       <DependentUpon>dFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\Utilities\dIndex.ascx.cs">
+      <DependentUpon>dIndex.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\Utilities\dIndex.ascx.designer.cs">
+      <DependentUpon>dIndex.ascx</DependentUpon>
     </Compile>
     <Compile Include="display\Utilities\dMenu.ascx.cs">
       <DependentUpon>dMenu.ascx</DependentUpon>

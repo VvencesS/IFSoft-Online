@@ -11,7 +11,16 @@ namespace IFSoft.display.News
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            switch (Request["fs"])
+            {
+                case "del":
+                    Console.WriteLine(Request["fs"]);
+                    Controls.Add(LoadControl("dNewsDetail.ascx"));
+                    break;
+                default:
+                    Controls.Add(LoadControl("dNewsList.ascx"));
+                    break;
+            }
         }
     }
 }

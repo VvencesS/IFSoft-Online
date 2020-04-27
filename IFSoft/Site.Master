@@ -93,7 +93,7 @@
 	     	</div>
 	     	<div class="clear"></div>
 	     </div>	     
-	<div class="header_slide">
+	<%--<div class="header_slide">
 			<div class="header_bottom_left">				
 				<div class="categories">
 				  <ul>
@@ -166,8 +166,9 @@
 		      </div>
 		   <div class="clear"></div>
 		</div>
-   </div>
- <div class="main">
+   </div>--%>
+		
+ <%--<div class="main">
     <div class="content">
     	<div class="content_top">
     		<div class="heading">
@@ -299,7 +300,7 @@
 			</div>
     </div>
  </div>
-</div>
+</div>--%>
    <div class="footer">
    	  <div class="wrap">	
 	     <div class="section group">

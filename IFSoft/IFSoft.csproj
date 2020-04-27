@@ -139,6 +139,20 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="display\displayControl.ascx" />
+    <Content Include="display\News\dNewsControl.ascx" />
+    <Content Include="display\News\dNewsDetail.ascx" />
+    <Content Include="display\News\dNewsList.ascx" />
+    <Content Include="display\News\dNewsNew.ascx" />
+    <Content Include="display\Product\dProductControl.ascx" />
+    <Content Include="display\Product\dProductDetail.ascx" />
+    <Content Include="display\Product\dProductList.ascx" />
+    <Content Include="display\Product\dProductNew.ascx" />
+    <Content Include="display\Utilities\dBanner.ascx" />
+    <Content Include="display\Utilities\dContact.ascx" />
+    <Content Include="display\Utilities\dFooter.ascx" />
+    <Content Include="display\Utilities\dMenu.ascx" />
+    <Content Include="display\Utilities\dSupport.ascx" />
+    <Content Include="display\Utilities\dUtilitiesControl.ascx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Adminitrator.aspx" />
@@ -264,6 +278,69 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="temp\css\easy-responsive-tabs.css" />
+    <Content Include="temp\css\global.css" />
+    <Content Include="temp\css\slider.css" />
+    <Content Include="temp\css\style.css" />
+    <Content Include="temp\images\about_img.jpg" />
+    <Content Include="temp\images\arrow-next.png" />
+    <Content Include="temp\images\arrow-prev.png" />
+    <Content Include="temp\images\arrow_up.png" />
+    <Content Include="temp\images\compare.png" />
+    <Content Include="temp\images\delivery-img1.jpg" />
+    <Content Include="temp\images\delivery-img2.jpg" />
+    <Content Include="temp\images\delivery-img3.jpg" />
+    <Content Include="temp\images\dribbble.png" />
+    <Content Include="temp\images\drop_arrow-hover.png" />
+    <Content Include="temp\images\drop_arrow.png" />
+    <Content Include="temp\images\facebook.png" />
+    <Content Include="temp\images\feature-pic1.jpg" />
+    <Content Include="temp\images\feature-pic2.jpg" />
+    <Content Include="temp\images\feature-pic3.jpg" />
+    <Content Include="temp\images\feature-pic4.jpg" />
+    <Content Include="temp\images\linkedin.png" />
+    <Content Include="temp\images\list-img.png" />
+    <Content Include="temp\images\logo.png" />
+    <Content Include="temp\images\new-pic1.jpg" />
+    <Content Include="temp\images\new-pic2.jpg" />
+    <Content Include="temp\images\new-pic3.jpg" />
+    <Content Include="temp\images\new-pic4.jpg" />
+    <Content Include="temp\images\newsimg1.jpg" />
+    <Content Include="temp\images\newsimg2.jpg" />
+    <Content Include="temp\images\newsimg3.jpg" />
+    <Content Include="temp\images\preview.jpg" />
+    <Content Include="temp\images\price-rating.png" />
+    <Content Include="temp\images\productslide-1.jpg" />
+    <Content Include="temp\images\productslide-2.jpg" />
+    <Content Include="temp\images\productslide-3.jpg" />
+    <Content Include="temp\images\productslide-4.jpg" />
+    <Content Include="temp\images\productslide-5.jpg" />
+    <Content Include="temp\images\productslide-6.jpg" />
+    <Content Include="temp\images\quality-rating.png" />
+    <Content Include="temp\images\search.png" />
+    <Content Include="temp\images\skype.png" />
+    <Content Include="temp\images\slide-1-image.png" />
+    <Content Include="temp\images\slide-2-image.jpg" />
+    <Content Include="temp\images\slide-3-image.jpg" />
+    <Content Include="temp\images\tag.png" />
+    <Content Include="temp\images\thumbnailslide-1.jpg" />
+    <Content Include="temp\images\thumbnailslide-2.jpg" />
+    <Content Include="temp\images\thumbnailslide-3.jpg" />
+    <Content Include="temp\images\thumbnailslide-4.jpg" />
+    <Content Include="temp\images\thumbnailslide-5.jpg" />
+    <Content Include="temp\images\thumbnailslide-6.jpg" />
+    <Content Include="temp\images\twitter.png" />
+    <Content Include="temp\images\value-rating.png" />
+    <Content Include="temp\images\wishlist.png" />
+    <Content Include="temp\js\easing.js" />
+    <Content Include="temp\js\easyResponsiveTabs.js" />
+    <Content Include="temp\js\jquery-1.7.2.min.js" />
+    <Content Include="temp\js\jquery.accordion.js" />
+    <Content Include="temp\js\jquery.easing.js" />
+    <Content Include="temp\js\move-top.js" />
+    <Content Include="temp\js\script.js" />
+    <Content Include="temp\js\slides.min.jquery.js" />
+    <Content Include="temp\js\startstop-slider.js" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -366,6 +443,104 @@
     <Compile Include="display\displayControl.ascx.designer.cs">
       <DependentUpon>displayControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="display\News\dNewsControl.ascx.cs">
+      <DependentUpon>dNewsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\News\dNewsControl.ascx.designer.cs">
+      <DependentUpon>dNewsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\News\dNewsDetail.ascx.cs">
+      <DependentUpon>dNewsDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\News\dNewsDetail.ascx.designer.cs">
+      <DependentUpon>dNewsDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\News\dNewsList.ascx.cs">
+      <DependentUpon>dNewsList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\News\dNewsList.ascx.designer.cs">
+      <DependentUpon>dNewsList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\News\dNewsNew.ascx.cs">
+      <DependentUpon>dNewsNew.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\News\dNewsNew.ascx.designer.cs">
+      <DependentUpon>dNewsNew.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\Product\dProductControl.ascx.cs">
+      <DependentUpon>dProductControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\Product\dProductControl.ascx.designer.cs">
+      <DependentUpon>dProductControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\Product\dProductDetail.ascx.cs">
+      <DependentUpon>dProductDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\Product\dProductDetail.ascx.designer.cs">
+      <DependentUpon>dProductDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\Product\dProductList.ascx.cs">
+      <DependentUpon>dProductList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\Product\dProductList.ascx.designer.cs">
+      <DependentUpon>dProductList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\Product\dProductNew.ascx.cs">
+      <DependentUpon>dProductNew.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\Product\dProductNew.ascx.designer.cs">
+      <DependentUpon>dProductNew.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\Utilities\dBanner.ascx.cs">
+      <DependentUpon>dBanner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\Utilities\dBanner.ascx.designer.cs">
+      <DependentUpon>dBanner.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\Utilities\dContact.ascx.cs">
+      <DependentUpon>dContact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\Utilities\dContact.ascx.designer.cs">
+      <DependentUpon>dContact.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\Utilities\dFooter.ascx.cs">
+      <DependentUpon>dFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\Utilities\dFooter.ascx.designer.cs">
+      <DependentUpon>dFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\Utilities\dMenu.ascx.cs">
+      <DependentUpon>dMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\Utilities\dMenu.ascx.designer.cs">
+      <DependentUpon>dMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\Utilities\dSupport.ascx.cs">
+      <DependentUpon>dSupport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\Utilities\dSupport.ascx.designer.cs">
+      <DependentUpon>dSupport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\Utilities\dUtilitiesControl.ascx.cs">
+      <DependentUpon>dUtilitiesControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\Utilities\dUtilitiesControl.ascx.designer.cs">
+      <DependentUpon>dUtilitiesControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -408,6 +583,8 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="temp\font\Amble-Regular-webfont.ttf" />
+    <Content Include="temp\images\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

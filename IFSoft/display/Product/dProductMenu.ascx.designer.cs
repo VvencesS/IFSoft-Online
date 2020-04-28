@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IFSoft.display.Utilities
+namespace IFSoft.display.Product
 {
 
 
-    public partial class dIndex
+    public partial class dProductMenu
     {
 
         /// <summary>
-        /// dProductMenu1 control.
+        /// rptProductList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::IFSoft.display.Product.dProductMenu dProductMenu1;
+        protected global::System.Web.UI.WebControls.Repeater rptProductList;
     }
 }

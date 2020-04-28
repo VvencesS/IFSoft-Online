@@ -14,13 +14,13 @@ namespace IFSoft
             switch (Request["f"])
             {
                 case "news":
-                    Controls.Add(LoadControl("display/news/dNewsList.ascx"));
+                    Controls.Add(LoadControl("display/news/dNewsControl.ascx"));
                     break;
                 case "contact":
-
+                    Controls.Add(LoadControl("display/Utilities/dcontact.ascx"));
                     break;
                 default:
-
+                    Controls.Add(LoadControl("display/Utilities/dIndex.ascx"));
                     break;
             }
         }

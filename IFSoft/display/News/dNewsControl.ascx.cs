@@ -11,7 +11,8 @@ namespace IFSoft.display.News
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            switch (Request["fs"])
+            string fs = Request["fs"];
+            switch (fs)
             {
                 case "del":
                     Console.WriteLine(Request["fs"]);

@@ -32,6 +32,12 @@ namespace IFSoft.display.News
                 ltContent.Text = dt.Rows[0]["vContent"].ToString();
                 ltAuthor.Text = dt.Rows[0]["vAuthor"].ToString();
 
+                if (dt.Rows.Count > 0)
+                {
+                    rptNewsDetails.DataSource = dt;
+                    rptNewsDetails.DataBind();
+                }
+
                 //Tin tức khác
                 dt = _news.GetNewsDetailOrther(int.Parse(id));
                 if (dt.Rows.Count > 0)

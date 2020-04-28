@@ -129,16 +129,15 @@ namespace IFSOFT.Dal
         }
         public DataTable GetNewsDetail(int delID) //Hiển thị tin tức chi tiết
         {
-            SqlCommand command = new SqlCommand("Select * from NewsDetail where DelID=@deID and Active='true'");
+            SqlCommand command = new SqlCommand("Select * from NewsDetail where DelID=@delID and Active='true'");
             command.CommandType = CommandType.Text;
             command.Parameters.AddWithValue("@delID", delID);
 
             return SQLDB.SQLDB.GetData(command);
-
         }
         public DataTable GetNewsDetailOrther(int delID) //Hiển thị tin tức chi tiết
         {
-            SqlCommand command = new SqlCommand("Select * from NewsDetail where DelID!=@deID and Active='true'");
+            SqlCommand command = new SqlCommand("Select * from NewsDetail where DelID!=@delID and Active='true'");
             command.CommandType = CommandType.Text;
             command.Parameters.AddWithValue("@delID", delID);
 

@@ -146,6 +146,7 @@
     <Content Include="display\Product\dProductControl.ascx" />
     <Content Include="display\Product\dProductDetail.ascx" />
     <Content Include="display\Product\dProductList.ascx" />
+    <Content Include="display\Product\dProductMenu.ascx" />
     <Content Include="display\Product\dProductNew.ascx" />
     <Content Include="display\Utilities\dBanner.ascx" />
     <Content Include="display\Utilities\dContact.ascx" />
@@ -492,6 +493,13 @@
     </Compile>
     <Compile Include="display\Product\dProductList.ascx.designer.cs">
       <DependentUpon>dProductList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\Product\dProductMenu.ascx.cs">
+      <DependentUpon>dProductMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\Product\dProductMenu.ascx.designer.cs">
+      <DependentUpon>dProductMenu.ascx</DependentUpon>
     </Compile>
     <Compile Include="display\Product\dProductNew.ascx.cs">
       <DependentUpon>dProductNew.ascx</DependentUpon>

@@ -11,7 +11,20 @@ namespace IFSoft.admin.Product
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["username"] == null)
+            {
+                Response.Redirect("~/Adminitrator.aspx");
+            }
+            string fs = Request["fs"];
+            switch (fs)
+            {
+                case "des":
+                    Controls.Add(LoadControl("ProductDetail.ascx"));
+                    break;
+                default:
+                    Controls.Add(LoadControl("ProductCategories.ascx"));
+                    break;
+            }
         }
     }
 }

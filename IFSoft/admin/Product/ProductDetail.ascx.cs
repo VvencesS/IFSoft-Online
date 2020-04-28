@@ -1,71 +1,73 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
 using IFSOFT.Dal;
+using System.IO;
 
-namespace IFSoft.admin.News
+namespace IFSoft.admin.Product
 {
-    public partial class NewsDetail : System.Web.UI.UserControl
+    public partial class ProductDetail : System.Web.UI.UserControl
     {
-        clsNews _news = new clsNews();
+        clsProduct _product = new clsProduct();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                LoadNewsDetailAll();
+                LoadProductDetailAll();
                 LoadDataDropDownList();
                 LoadDataDropDownList1();
             }
         }
         void LoadDataDropDownList()
         {
-            drpNewsCategoy.DataSource = _news.GetList();
-            drpNewsCategoy.DataValueField = "CateID";
-            drpNewsCategoy.DataTextField = "vName";
-            drpNewsCategoy.DataBind();
+            drpProductCategory.DataSource = _product.GetList();
+            drpProductCategory.DataValueField = "ProID";
+            drpProductCategory.DataTextField = "vName";
+            drpProductCategory.DataBind();
         }
         void LoadDataDropDownList1()
         {
-            drpNewsCategory1.DataSource = _news.GetList();
-            drpNewsCategory1.DataValueField = "CateID";
-            drpNewsCategory1.DataTextField = "vName";
-            drpNewsCategory1.DataBind();
+            drpProductCategory1.DataSource = _product.GetList();
+            drpProductCategory1.DataValueField = "ProID";
+            drpProductCategory1.DataTextField = "vName";
+            drpProductCategory1.DataBind();
         }
-        void LoadNewsDetailAll()
+        void LoadProductDetailAll()
         {
-            rptNewsDetails.DataSource = _news.GetListNewsDetailAll();
-            rptNewsDetails.DataBind();
+            rptProductDetails.DataSource = _product.GetListProductDetailAll();
+            rptProductDetails.DataBind();
         }
-        void LoadNewsDetail()
+        void LoadProductDetail()
         {
-            rptNewsDetails.DataSource = _news.GetListNewsDetail(int.Parse(drpNewsCategory1.SelectedValue.ToString()));
-            rptNewsDetails.DataBind();
+            rptProductDetails.DataSource = _product.GetListProductDetail(int.Parse(drpProductCategory1.SelectedValue.ToString()));
+            rptProductDetails.DataBind();
         }
+
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             //Upload image
             string typefile = "";
             string file = hdImage.Value; //Nếu file chưa có thì sẽ là rỗng
-            
+
             if (fUp.FileName.Length > 0)
             {
                 if (fUp.PostedFile.ContentLength < 5000000)
                 {
-                    if(fUp.PostedFile.ContentType.Equals("image/jpeg") 
-                        || fUp.PostedFile.ContentType.Equals("image/pjpeg") 
-                        || fUp.PostedFile.ContentType.Equals("image/x-png") 
-                        || fUp.PostedFile.ContentType.Equals("image/png") 
-                        || fUp.PostedFile.ContentType.Equals("image/gif") 
+                    if (fUp.PostedFile.ContentType.Equals("image/jpeg")
+                        || fUp.PostedFile.ContentType.Equals("image/pjpeg")
+                        || fUp.PostedFile.ContentType.Equals("image/x-png")
+                        || fUp.PostedFile.ContentType.Equals("image/png")
+                        || fUp.PostedFile.ContentType.Equals("image/gif")
                         || fUp.PostedFile.ContentType.Equals("image/x-shockwave-flash"))
                     {
                         typefile = Path.GetExtension(fUp.FileName).ToLower();
                         file = Path.GetFileName(fUp.PostedFile.FileName);
-                        file = fUp.FileName.Replace(file, "IFsoft" + DateTime.Now.Hour + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day + DateTime.Now.Minute + DateTime.Now.Second + typefile);
+                        file = fUp.FileName.Replace(file, "IFsoft_ProductImage" + DateTime.Now.Hour + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day + DateTime.Now.Minute + DateTime.Now.Second + typefile);
                         fUp.PostedFile.SaveAs(Server.MapPath("~/Images/") + file);
                     }
                 }
@@ -76,28 +78,33 @@ namespace IFSoft.admin.News
             {
                 if (!hdImage.Value.Equals(""))
                 {
-                    if(System.IO.File.Exists(Server.MapPath("~/Images/" + hdImage.Value)) == true)
+                    if (System.IO.File.Exists(Server.MapPath("~/Images/" + hdImage.Value)) == true)
                     {
                         System.IO.File.Delete(Server.MapPath("~/Images/" + hdImage.Value));
                     }
                 }
             }
 
-            if (!string.IsNullOrEmpty(txtTitle.Text.Trim()))
+            if (!string.IsNullOrEmpty(txtName.Text.Trim()))
             {
                 if (hdInsert.Value == "insert")
                 {
                     //Thêm mới
                     bool active = chkActive.Checked ? true : false;
-                    _news.InsertDetail(int.Parse(drpNewsCategoy.SelectedValue.ToString()), txtTitle.Text.Trim(), 
-                        txtDesc.Text.Trim(), txtContent.Text.Trim(), file, DateTime.Now, txtAuthor.Text.Trim(), active);
+                    _product.InsertProductDetail(int.Parse(drpProductCategory.SelectedValue.ToString()), 
+                        int.Parse(txtCode.Text.Trim()), txtName.Text.Trim(), txtDesc.Text.Trim(), 
+                        txtContent.Text.Trim(), file, int.Parse(txtQuantity.Text.Trim()), 
+                        float.Parse(txtPrice.Text.Trim()), DateTime.Now, txtView.Text.Trim(), active);
                 }
                 else
                 {
                     //Cập nhật
                     bool active = chkActive.Checked ? true : false;
-                    _news.UpdateDetail(int.Parse(hdDelID.Value.ToString()), int.Parse(drpNewsCategoy.SelectedValue.ToString()), 
-                        txtTitle.Text.Trim(), txtDesc.Text.Trim(), txtContent.Text.Trim(), file, txtAuthor.Text.Trim(), active);
+                    _product.UpdateProductDetail(int.Parse(hdProDelID.Value.ToString()), 
+                        int.Parse(drpProductCategory.SelectedValue.ToString()),
+                        int.Parse(txtCode.Text.Trim()), txtName.Text.Trim(), txtDesc.Text.Trim(),
+                        txtContent.Text.Trim(), file, int.Parse(txtQuantity.Text.Trim()),
+                        float.Parse(txtPrice.Text.Trim()), DateTime.Now, txtView.Text.Trim(), active);
                 }
                 Response.Redirect(Request.Url.ToString());
             }
@@ -112,24 +119,28 @@ namespace IFSoft.admin.News
         {
             ((LinkButton)sender).Attributes["onclick"] = "return confirm('Delete selected Category?')";
         }
-        protected void rptNewsDetails_ItemCommand(object source, RepeaterCommandEventArgs e)
+
+        protected void rptProductDetails_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = _news.GetListByDelID(int.Parse(e.CommandArgument.ToString()));
+            dt = _product.GetListProductDetail_ByProDelID(int.Parse(e.CommandArgument.ToString()));
             switch (e.CommandName.ToString())
             {
                 case "update":
                     if (dt.Rows.Count > 0)
                     {
-                        drpNewsCategoy.SelectedValue = dt.Rows[0]["CateID"].ToString();
-                        txtTitle.Text = dt.Rows[0]["vTitle"].ToString();
+                        drpProductCategory.SelectedValue = dt.Rows[0]["ProID"].ToString();
+                        txtCode.Text = dt.Rows[0]["vCode"].ToString();
+                        txtName.Text = dt.Rows[0]["vName"].ToString();
                         txtDesc.Text = dt.Rows[0]["vDesc"].ToString();
                         txtContent.Text = dt.Rows[0]["vContent"].ToString();
                         hdImage.Value = dt.Rows[0]["vImage"].ToString();
-                        txtAuthor.Text = dt.Rows[0]["vAuthor"].ToString();
+                        txtQuantity.Text = dt.Rows[0]["iQuantity"].ToString();
+                        txtPrice.Text = dt.Rows[0]["vPrice"].ToString();
+                        txtView.Text = dt.Rows[0]["iView"].ToString();
                         chkActive.Checked = ((bool)dt.Rows[0]["Active"]) ? true : false;
 
-                        hdDelID.Value = e.CommandArgument.ToString();
+                        hdProDelID.Value = e.CommandArgument.ToString();
                         hdInsert.Value = "update";
 
                         mul.ActiveViewIndex = 1;
@@ -145,16 +156,16 @@ namespace IFSoft.admin.News
                         }
 
                         //Xóa dữ liệu trong csdl
-                        _news.DeleteDetail(int.Parse(e.CommandArgument.ToString()));
+                        _product.DeleteProductDetail(int.Parse(e.CommandArgument.ToString()));
                         Response.Redirect(Request.Url.ToString());
                     }
                     break;
             }
         }
 
-        protected void drpNewsCategory1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void drpProductCategory1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadNewsDetail();
+            LoadProductDetail();
         }
     }
 }

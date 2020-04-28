@@ -126,7 +126,9 @@
     <Content Include="admin\News\NewsCategories.ascx" />
     <Content Include="admin\News\NewsControl.ascx" />
     <Content Include="admin\News\NewsDetail.ascx" />
+    <Content Include="admin\Product\ProductCategories.ascx" />
     <Content Include="admin\Product\ProductControl.ascx" />
+    <Content Include="admin\Product\ProductDetail.ascx" />
     <Content Include="admin\User\AdminUser.ascx" />
     <Content Include="admin\User\UserControl.ascx" />
     <Content Include="Content\admin.css" />
@@ -408,12 +410,26 @@
     <Compile Include="admin\News\NewsDetail.ascx.designer.cs">
       <DependentUpon>NewsDetail.ascx</DependentUpon>
     </Compile>
+    <Compile Include="admin\Product\ProductCategories.ascx.cs">
+      <DependentUpon>ProductCategories.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Product\ProductCategories.ascx.designer.cs">
+      <DependentUpon>ProductCategories.ascx</DependentUpon>
+    </Compile>
     <Compile Include="admin\Product\ProductControl.ascx.cs">
       <DependentUpon>ProductControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\Product\ProductControl.ascx.designer.cs">
       <DependentUpon>ProductControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Product\ProductDetail.ascx.cs">
+      <DependentUpon>ProductDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Product\ProductDetail.ascx.designer.cs">
+      <DependentUpon>ProductDetail.ascx</DependentUpon>
     </Compile>
     <Compile Include="admin\User\AdminUser.ascx.cs">
       <DependentUpon>AdminUser.ascx</DependentUpon>

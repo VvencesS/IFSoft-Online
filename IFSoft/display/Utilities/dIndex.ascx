@@ -79,6 +79,23 @@
     		<div class="clear"></div>
     	</div>
 	      <div class="section group">
+			  <asp:Repeater ID="rptNewProduct" runat="server">
+				  <ItemTemplate>
+					  <div class="grid_1_of_4 images_1_of_4">
+						 <a href="preview.html"><img src="/Images/<%#:Eval("vImage") %>"/></a>
+						 <h2>Lorem Ipsum is simply </h2>
+						<div class="price-details">
+						   <div class="price-number">
+								<p><span class="rupees">$620.87</span></p>
+							</div>
+					       		<div class="add-cart">								
+									<h4><a href="preview.html">Add to Cart</a></h4>
+									</div>
+								<div class="clear"></div>
+						</div>
+					</div>
+				  </ItemTemplate>
+			  </asp:Repeater>
 				<div class="grid_1_of_4 images_1_of_4">
 					 <a href="preview.html"><img src="temp/images/feature-pic1.jpg" alt="" /></a>
 					 <h2>Lorem Ipsum is simply </h2>

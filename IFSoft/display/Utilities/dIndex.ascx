@@ -71,10 +71,10 @@
     <div class="content">
     	<div class="content_top">
     		<div class="heading">
-    		<h3>New Products</h3>
+    		<h3>Sản phẩm mới</h3>
     		</div>
     		<div class="see">
-    			<p><a href="#">See all Products</a></p>
+    			<p><a href="#">Xem tất cả</a></p>
     		</div>
     		<div class="clear"></div>
     	</div>
@@ -82,137 +82,49 @@
 			  <asp:Repeater ID="rptNewProduct" runat="server">
 				  <ItemTemplate>
 					  <div class="grid_1_of_4 images_1_of_4">
-						 <a href="preview.html"><img src="/Images/<%#:Eval("vImage") %>"/></a>
-						 <h2>Lorem Ipsum is simply </h2>
+						<a href="#"><img src="/Images/<%#:Eval("vImage") %>"/></a>
+						<h2><%#:Eval("vName") %></h2>
 						<div class="price-details">
-						   <div class="price-number">
-								<p><span class="rupees">$620.87</span></p>
+							<div class="price-number">
+								<p><span class="rupees"><%#:string.Format("{0:N0}", Eval("vPrice")) %></span></p>
 							</div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-									</div>
-								<div class="clear"></div>
+					       	<div class="add-cart">								
+								<h4><a href="preview.html">Thêm vào giỏ</a></h4>
+								</div>
+							<div class="clear"></div>
 						</div>
 					</div>
 				  </ItemTemplate>
 			  </asp:Repeater>
-				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="preview.html"><img src="temp/images/feature-pic1.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$620.87</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-					 
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="preview.html"><img src="temp/images/feature-pic2.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$899.75</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-				    
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="preview.html"><img src="temp/images/feature-pic3.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$599.00</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="preview.html"><img src="temp/images/feature-pic4.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$679.87</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>				     
-				</div>
+				
 			</div>
 			<div class="content_bottom">
     		<div class="heading">
-    		<h3>Feature Products</h3>
+    		<h3>Giá sản phẩm</h3>
     		</div>
     		<div class="see">
-    			<p><a href="#">See all Products</a></p>
+    			<p><a href="#">Xem tất cả</a></p>
     		</div>
     		<div class="clear"></div>
     	</div>
 			<div class="section group">
-				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="preview.html"><img src="temp/images/new-pic1.jpg" alt="" /></a>					
-					 <h2>Lorem Ipsum is simply </h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$849.99</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
+				<asp:Repeater ID="rptPriceProduct" runat="server">
+				  <ItemTemplate>
+					  <div class="grid_1_of_4 images_1_of_4">
+						<a href="#"><img src="/Images/<%#:Eval("vImage") %>"/></a>
+						<h2><%#:Eval("vName") %></h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p><span class="rupees"><%#:string.Format("{0:N0}", Eval("vPrice")) %></span></p>
+							</div>
+					       	<div class="add-cart">								
+								<h4><a href="preview.html">Thêm vào giỏ</a></h4>
+								</div>
+							<div class="clear"></div>
+						</div>
 					</div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="preview.html"><img src="temp/images/new-pic2.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$599.99</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="preview.html"><img src="temp/images/new-pic4.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$799.99</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-				 <a href="preview.html"><img src="temp/images/new-pic3.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>					 
-					 <div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$899.99</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-				</div>
+				  </ItemTemplate>
+			  </asp:Repeater>
 			</div>
     </div>
  </div>

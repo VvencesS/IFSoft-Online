@@ -131,11 +131,21 @@ namespace IFSOFT.Dal
 
             return SQLDB.SQLDB.GetData(command);
         }
+        
+        // New product
         public DataTable GetListNewProduct(int top)
         {
-            SqlCommand command = new SqlCommand("Select top @top * from ProductDetail where Active='true' order by CreateDate Desc");
+            SqlCommand command = new SqlCommand("Select top " + top + " * from ProductDetail where Active='true' order by CreateDate Desc");
             command.CommandType = CommandType.Text;
-            command.Parameters.AddWithValue("@top", top);
+
+            return SQLDB.SQLDB.GetData(command);
+        }
+
+        //Good price product
+        public DataTable GetListPriceProduct(int top)
+        {
+            SqlCommand command = new SqlCommand("Select top " + top + " * from ProductDetail where Active='true' order by vPrice Desc");
+            command.CommandType = CommandType.Text;
 
             return SQLDB.SQLDB.GetData(command);
         }

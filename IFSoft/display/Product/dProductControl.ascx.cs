@@ -19,6 +19,9 @@ namespace IFSoft.display.Product
                 case "des":
                     Controls.Add(LoadControl("dProductDetail.ascx"));
                     break;
+                case "cart":
+                    Controls.Add(LoadControl("dProductCart.ascx"));
+                    break;
             }
         }
     }

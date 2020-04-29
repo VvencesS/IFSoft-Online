@@ -12,9 +12,13 @@ namespace IFSoft.display.Product
 {
     public partial class dProductDetail : System.Web.UI.UserControl
     {
+
+        clsProductCart _cart = new clsProductCart();
         clsProduct _product = new clsProduct();
+        string id = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            id = Request["id"];
             if (!IsPostBack)
             {
                 LoadProductDetail();
@@ -23,7 +27,7 @@ namespace IFSoft.display.Product
         void LoadProductDetail()
         {
             DataTable dt = new DataTable();
-            string id = Request["id"];
+            
             dt = _product.GetProductDetailByProDelID(int.Parse(id));
             if (dt.Rows.Count > 0)
             {
@@ -33,6 +37,12 @@ namespace IFSoft.display.Product
                 ltPrice.Text = string.Format("{0:N0}", dt.Rows[0]["vPrice"].ToString());
                 ltContent.Text = dt.Rows[0]["vContent"].ToString();
             }
+        }
+
+        protected void lnkCart_Click(object sender, EventArgs e)
+        {
+            _cart.ShoppingCart_AddCart(int.Parse(id), 10);
+            Response.Redirect("?f=product&fs=cart");
         }
     }
 }

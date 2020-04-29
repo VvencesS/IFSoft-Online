@@ -145,6 +145,7 @@
     <Content Include="display\News\dNewsDetail.ascx" />
     <Content Include="display\News\dNewsList.ascx" />
     <Content Include="display\News\dNewsNew.ascx" />
+    <Content Include="display\Product\dProductCart.ascx" />
     <Content Include="display\Product\dProductControl.ascx" />
     <Content Include="display\Product\dProductDetail.ascx" />
     <Content Include="display\Product\dProductList.ascx" />
@@ -488,6 +489,13 @@
     </Compile>
     <Compile Include="display\News\dNewsNew.ascx.designer.cs">
       <DependentUpon>dNewsNew.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="display\Product\dProductCart.ascx.cs">
+      <DependentUpon>dProductCart.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="display\Product\dProductCart.ascx.designer.cs">
+      <DependentUpon>dProductCart.ascx</DependentUpon>
     </Compile>
     <Compile Include="display\Product\dProductControl.ascx.cs">
       <DependentUpon>dProductControl.ascx</DependentUpon>

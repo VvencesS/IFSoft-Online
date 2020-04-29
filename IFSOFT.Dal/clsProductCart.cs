@@ -23,7 +23,7 @@ namespace IFSOFT.Dal
 
             System.Web.HttpContext.Current.Session["cart"] = dt;
         }
-        public static void ShoppingCart_AddCart(int PID, int quantity)
+        public void ShoppingCart_AddCart(int PID, int quantity)
         {
             if (System.Web.HttpContext.Current.Session["cart"] == null)
             {

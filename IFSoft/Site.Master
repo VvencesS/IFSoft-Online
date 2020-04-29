@@ -22,6 +22,7 @@
 
 </head>
 <body>
+	<form runat="server">
     <div class="wrap">
 	<div class="header">
 		<div class="headertop_desc">
@@ -409,6 +410,6 @@
         </div>
 
     </form>--%>
-
+</form>
 </body>
 </html>

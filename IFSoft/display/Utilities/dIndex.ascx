@@ -65,7 +65,7 @@
 		      </div>
 		   <div class="clear"></div>
 		</div>
-   </div>
+  
 		
  <div class="main">
     <div class="content">
@@ -128,4 +128,4 @@
 			</div>
     </div>
  </div>
-</div>
+

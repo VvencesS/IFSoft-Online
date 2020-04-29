@@ -19,6 +19,9 @@ namespace IFSoft
                 case "contact":
                     Controls.Add(LoadControl("display/Utilities/dcontact.ascx"));
                     break;
+                case "product":
+                    Controls.Add(LoadControl("display/Product/dProductControl.ascx"));
+                    break;
                 default:
                     Controls.Add(LoadControl("display/Utilities/dIndex.ascx"));
                     break;

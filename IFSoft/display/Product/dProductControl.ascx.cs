@@ -11,7 +11,15 @@ namespace IFSoft.display.Product
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            switch (Request["fs"])
+            {
+                case "ls":
+                    Controls.Add(LoadControl("dProductList.ascx"));
+                    break;
+                case "des":
+                    Controls.Add(LoadControl("dProductDetail.ascx"));
+                    break;
+            }
         }
     }
 }

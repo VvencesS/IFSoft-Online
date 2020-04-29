@@ -82,7 +82,7 @@
 			  <asp:Repeater ID="rptNewProduct" runat="server">
 				  <ItemTemplate>
 					  <div class="grid_1_of_4 images_1_of_4">
-						<a href="#"><img src="/Images/<%#:Eval("vImage") %>"/></a>
+						<a href='?f=product&fs=des&id=<%#:Eval("ProDelID") %>'><img src="/Images/<%#:Eval("vImage") %>"/></a>
 						<h2><%#:Eval("vName") %></h2>
 						<div class="price-details">
 							<div class="price-number">
@@ -111,7 +111,7 @@
 				<asp:Repeater ID="rptPriceProduct" runat="server">
 				  <ItemTemplate>
 					  <div class="grid_1_of_4 images_1_of_4">
-						<a href="#"><img src="/Images/<%#:Eval("vImage") %>"/></a>
+						<a href='?f=product&fs=des&id=<%#:Eval("ProDelID") %>'><img src="/Images/<%#:Eval("vImage") %>"/></a>
 						<h2><%#:Eval("vName") %></h2>
 						<div class="price-details">
 							<div class="price-number">

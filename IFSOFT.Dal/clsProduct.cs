@@ -149,5 +149,13 @@ namespace IFSOFT.Dal
 
             return SQLDB.SQLDB.GetData(command);
         }
+        public DataTable GetProductDetailByProDelID(int proDelID)
+        {
+            SqlCommand command = new SqlCommand("Select * from ProductDetail where ProDelID=@proDelID and Active='true'");
+            command.CommandType = CommandType.Text;
+            command.Parameters.AddWithValue("@proDelID", proDelID);
+
+            return SQLDB.SQLDB.GetData(command);
+        }
     }
 }

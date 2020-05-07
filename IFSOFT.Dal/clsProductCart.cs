@@ -79,5 +79,20 @@ namespace IFSOFT.Dal
                 }
             }
         }
+        public void ShoppingCart_RemoveCart(int PID)
+        {
+            DataTable dtCart = new DataTable();
+            dtCart = (DataTable)HttpContext.Current.Session["cart"];
+
+            for(int i = 0; i < dtCart.Rows.Count; i++)
+            {
+                if (dtCart.Rows[i]["PID"].ToString() == PID.ToString())
+                {
+                    dtCart.Rows.RemoveAt(i);
+                    break;
+                }
+            }
+            HttpContext.Current.Session["cart"] = dtCart;
+        }
     }
 }

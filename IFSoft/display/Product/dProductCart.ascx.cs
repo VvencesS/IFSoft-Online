@@ -5,11 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using IFSOFT.Dal;
 
 namespace IFSoft.display.Product
 {
     public partial class dProductCart : System.Web.UI.UserControl
     {
+        clsProductCart cart = new clsProductCart();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["cart"] != null)
@@ -25,7 +27,15 @@ namespace IFSoft.display.Product
                     total += Convert.ToSingle(dtCart.Rows[i]["Money"]);
                 }
                 ltTotal.Text = string.Format("{0:N0}", total);
+
+                Session["total"] = total;
+                Session["CountPro"] = dtCart.Rows.Count.ToString();
             }
+        }
+        protected void rptProductCart_ItemComand(object source, RepeaterCommandEventArgs e)
+        {
+            cart.ShoppingCart_RemoveCart(int.Parse(e.CommandArgument.ToString()));
+            Response.Redirect(Request.Url.ToString());
         }
     }
 }

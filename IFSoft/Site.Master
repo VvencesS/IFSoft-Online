@@ -45,7 +45,7 @@
                     <div class="cart">
                         <p>
                             Giỏ hàng của bạn<div id="dd" class="wrapper-dropdown-2">
-                                0 sản phẩm - 0.00 VNĐ
+                                <b style="color:red;"><%=Session["CountPro"] %></b> sản phẩm - <b style="color:red;"><%=string.Format("{0:N0}", Session["total"]) %></b> VNĐ
 			  	   	<%--<ul class="dropdown">
 							<li>you have no items in your Shopping cart</li>
 					</ul>--%>

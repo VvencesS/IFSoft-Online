@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="dProductCart.ascx.cs" Inherits="IFSoft.display.Product.dProductCart" %>
+
 <asp:Repeater ID="rptProductCart" runat="server">
     <HeaderTemplate>
         <table style="width:100%;">
@@ -18,7 +19,7 @@
                 <td><%#:string.Format("{0:N0}", Eval("Money")) %></td>
                 <td>
                     <form runat="server">
-                    <asp:LinkButton ID="lnkDelete" runat="server">Xóa</asp:LinkButton>
+                        <asp:LinkButton ID="lnkDelete" runat="server" CommandArgument='<%#:Eval("PID") %>'>Xóa</asp:LinkButton>
                     </form>
                 </td>
             </tr>

@@ -15,13 +15,13 @@ namespace IFSoft.display.Utilities
     {
 
         /// <summary>
-        /// dProductMenu1 control.
+        /// dproductmenu1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::IFSoft.display.Product.dProductMenu dProductMenu1;
+        protected global::IFSoft.display.Product.dProductMenu dproductmenu1;
 
         /// <summary>
         /// rptNewProduct control.

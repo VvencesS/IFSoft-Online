@@ -27,7 +27,7 @@ namespace IFSoft.display.Product
         void LoadProductDetail()
         {
             DataTable dt = new DataTable();
-            
+
             dt = _product.GetProductDetailByProDelID(int.Parse(id));
             if (dt.Rows.Count > 0)
             {
@@ -38,8 +38,14 @@ namespace IFSoft.display.Product
                 ltContent.Text = dt.Rows[0]["vContent"].ToString();
             }
         }
+        
+        //protected void lnkCart_Click1(object sender, EventArgs e)
+        //{
+        //    _cart.ShoppingCart_AddCart(int.Parse(id), 10);
+        //    Response.Redirect("?f=product&fs=cart");
+        //}
 
-        protected void lnkCart_Click(object sender, EventArgs e)
+        protected void lnkCart1_Click(object sender, EventArgs e)
         {
             _cart.ShoppingCart_AddCart(int.Parse(id), 10);
             Response.Redirect("?f=product&fs=cart");

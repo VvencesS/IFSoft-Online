@@ -92,7 +92,7 @@ namespace IFSOFT.Dal
         {
             SqlCommand command = new SqlCommand("Select * from ProductDetail where ProDelID=@proDelID");
             command.CommandType = CommandType.Text;
-            command.Parameters.AddWithValue("@proID", proDelID);
+            command.Parameters.AddWithValue("@proDelID", proDelID);
 
             return SQLDB.SQLDB.GetData(command);
         }

@@ -17,6 +17,14 @@ namespace IFSoft.display.Product
                 DataTable dtCart = (DataTable)Session["cart"];
                 rptProductCart.DataSource = dtCart;
                 rptProductCart.DataBind();
+
+                //Tính tổng tiền
+                float total = 0;
+                for(int i = 0; i < dtCart.Rows.Count; i++)
+                {
+                    total += Convert.ToSingle(dtCart.Rows[i]["Money"]);
+                }
+                ltTotal.Text = string.Format("{0:N0}", total);
             }
         }
     }

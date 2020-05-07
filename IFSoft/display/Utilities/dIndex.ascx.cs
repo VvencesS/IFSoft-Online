@@ -41,5 +41,7 @@ namespace IFSoft.display.Utilities
                 rptPriceProduct.DataBind();
             }
         }
+
+        
     }
 }

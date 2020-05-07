@@ -16,10 +16,18 @@
                 <td><%#:Eval("Quantity") %></td>
                 <td><%#:string.Format("{0:N0}", Eval("Price")) %></td>
                 <td><%#:string.Format("{0:N0}", Eval("Money")) %></td>
-                <td><asp:LinkButton ID="lnkDelete" runat="server">Xóa</asp:LinkButton></td>
+                <td>
+                    <form runat="server">
+                    <asp:LinkButton ID="lnkDelete" runat="server">Xóa</asp:LinkButton>
+                    </form>
+                </td>
             </tr>
     </ItemTemplate>
     <FooterTemplate>
         </table>
     </FooterTemplate>
 </asp:Repeater>
+<hr />
+<div style="color:red;font-weight:bold;text-align:right;font-size:18px;">
+    <asp:Literal ID="ltTotal" runat="server"></asp:Literal>
+</div>
